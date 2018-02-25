@@ -1,12 +1,13 @@
-package fr.weefle.waze;
+package fr.weefle.wazeapi;
 
-import fr.weefle.waze.nms.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Waze extends JavaPlugin {
+import fr.weefle.wazeapi.nms.*;
+
+public class WazeAPI extends JavaPlugin {
 	
-	private static Waze instance;
+	private static WazeAPI instance;
 	private ActionBar actionbar;
 	private Title title;
 	private BossBarAPI bossbar;
@@ -80,7 +81,7 @@ public class Waze extends JavaPlugin {
     public Title getTitle() {
         return title;
     }
-    public static Waze getInstance(){
+    public static WazeAPI getInstance(){
 	    return instance;
     }
     public BossBarAPI getBossBar(){

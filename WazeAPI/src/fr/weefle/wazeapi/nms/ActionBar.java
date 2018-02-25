@@ -1,4 +1,4 @@
-package fr.weefle.waze.nms;
+package fr.weefle.wazeapi.nms;
 
 import java.lang.reflect.InvocationTargetException;
 import org.bukkit.entity.Player;

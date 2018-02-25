@@ -1,4 +1,4 @@
-package fr.weefle.waze.nms;
+package fr.weefle.wazeapi.nms;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

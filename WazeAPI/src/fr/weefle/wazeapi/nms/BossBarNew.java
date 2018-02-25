@@ -1,4 +1,4 @@
-package fr.weefle.waze.nms;
+package fr.weefle.wazeapi.nms;
 
 import java.util.HashMap;
 import org.bukkit.Bukkit;
@@ -6,15 +6,14 @@ import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
-
-import fr.weefle.waze.Waze;
+import fr.weefle.wazeapi.WazeAPI;
 
 public class BossBarNew implements BossBarAPI {
 	
 	private HashMap<String, BossBar> bar = new HashMap<>();
 	private int task;
-    private Waze m;
-    public BossBarNew(Waze m) {
+    private WazeAPI m;
+    public BossBarNew(WazeAPI m) {
         this.m = m;
     }
 

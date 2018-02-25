@@ -1,4 +1,4 @@
-package fr.weefle.waze;
+package fr.weefle.wazeapi;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

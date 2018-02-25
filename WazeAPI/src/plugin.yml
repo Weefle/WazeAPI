@@ -1,5 +1,5 @@
-name: Waze
+name: WazeAPI
 author: Weefle
 version: 1.0
 description: The Waze API
-main: fr.weefle.waze.Waze
+main: fr.weefle.wazeapi.WazeAPI
