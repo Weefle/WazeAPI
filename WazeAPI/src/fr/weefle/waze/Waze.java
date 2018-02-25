@@ -1,0 +1,100 @@
+package fr.weefle.waze;
+
+import fr.weefle.waze.nms.*;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Waze extends JavaPlugin {
+	
+	private static Waze instance;
+	private ActionBar actionbar;
+	private Title title;
+	private BossBarAPI bossbar;
+	private Ping ping;
+	private Particles particles;
+	private ScoreBoard scoreboard;
+	
+	@Override
+	public void onEnable() {
+		if (setupNMS()) {
+
+			getLogger().info("NMS setup was successful!");
+			getLogger().info("The plugin setup process is complete!");
+
+		} else {
+
+			getLogger().severe("Failed to setup NMS!");
+			getLogger().severe("Your server version is not compatible with this plugin!");
+
+			Bukkit.getPluginManager().disablePlugin(this);
+		}
+		instance = this;
+        }
+
+	private boolean setupNMS() {
+
+		String version;
+
+		try {
+
+			version = Bukkit.getServer().getClass().getPackage().getName().replace(".",  ",").split(",")[3];
+
+		} catch (ArrayIndexOutOfBoundsException exception) {
+			return false;
+		}
+
+		getLogger().info("Your server is running version " + version);
+		if (version.equals("v1_12_R1")) {
+			title = new Title();
+			scoreboard = new ScoreBoard();
+			bossbar = new BossBarNew(this);
+			actionbar = new ActionBarNew();
+			ping = new Ping();
+			particles = new Particles();
+
+        } else if (version.equals("v1_8_R3")) {
+        	title = new Title();
+    		scoreboard = new ScoreBoard();
+    		//bossbar = new BossBarOld(this);
+    		actionbar = new ActionBarOld();
+    		ping = new Ping();
+    		particles = new Particles();
+        }else if (version.equals("v1_7_R4")){
+    		scoreboard = new ScoreBoard();
+    		ping = new Ping();
+    		//bossbar = new BossBarOld(this);
+    		particles = new Particles();
+    }else {
+    	title = new Title();
+		scoreboard = new ScoreBoard();
+		bossbar = new BossBarNew(this);
+		actionbar = new ActionBarOld();
+		ping = new Ping();
+		particles = new Particles();
+    }
+		return true;
+	}
+    public ActionBar getActionbar() {
+        return actionbar;
+    }
+    public Title getTitle() {
+        return title;
+    }
+    public static Waze getInstance(){
+	    return instance;
+    }
+    public BossBarAPI getBossBar(){
+        return bossbar;
+    }
+    public Ping getPing(){
+        return ping;
+    }
+    public ScoreBoard getScoreBoard(){
+	    return scoreboard;
+    }
+    
+    public Particles getParticles(){
+	    return particles;
+    }
+
+}
