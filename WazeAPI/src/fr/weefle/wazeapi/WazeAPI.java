@@ -48,7 +48,7 @@ public class WazeAPI extends JavaPlugin {
 		getLogger().info("Your server is running version " + version);
 		if (version.equals("v1_12_R1")) {
 			title = new Title();
-			autorespawn = new AutoRespawn(this);
+			autorespawn = new AutoRespawnNew();
 			scoreboard = new ScoreBoard();
 			bossbar = new BossBarNew(this);
 			actionbar = new ActionBarNew();
@@ -58,20 +58,20 @@ public class WazeAPI extends JavaPlugin {
         } else if (version.equals("v1_8_R3")) {
         	title = new Title();
     		scoreboard = new ScoreBoard();
-    		autorespawn = new AutoRespawn(this);
+    		autorespawn = new AutoRespawnOld(this);
     		//bossbar = new BossBarOld(this);
     		actionbar = new ActionBarOld();
     		ping = new Ping();
     		particles = new Particles();
         }else if (version.equals("v1_7_R4")){
     		scoreboard = new ScoreBoard();
-    		autorespawn = new AutoRespawn(this);
+    		autorespawn = new AutoRespawnOld(this);
     		ping = new Ping();
     		//bossbar = new BossBarOld(this);
     		particles = new Particles();
     }else {
     	title = new Title();
-    	autorespawn = new AutoRespawn(this);
+    	autorespawn = new AutoRespawnNew();
 		scoreboard = new ScoreBoard();
 		bossbar = new BossBarNew(this);
 		actionbar = new ActionBarOld();
