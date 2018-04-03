@@ -1,5 +1,6 @@
 name: WazeAPI
 author: Weefle
-version: 1.0
+version: 1.0.1
 description: The Waze API
+softdepend: [BarAPI]
 main: fr.weefle.wazeapi.WazeAPI

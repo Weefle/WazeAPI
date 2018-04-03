@@ -59,7 +59,7 @@ public class WazeAPI extends JavaPlugin {
         	title = new Title();
     		scoreboard = new ScoreBoard();
     		autorespawn = new AutoRespawnOld(this);
-    		//bossbar = new BossBarOld(this);
+    		bossbar = new BossBarOld();
     		actionbar = new ActionBarOld();
     		ping = new Ping();
     		particles = new Particles();
@@ -67,7 +67,7 @@ public class WazeAPI extends JavaPlugin {
     		scoreboard = new ScoreBoard();
     		autorespawn = new AutoRespawnOld(this);
     		ping = new Ping();
-    		//bossbar = new BossBarOld(this);
+    		bossbar = new BossBarOld();
     		particles = new Particles();
     }else {
     	title = new Title();
